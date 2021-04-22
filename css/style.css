@@ -102,3 +102,35 @@ body {
 .todo:last-child {
     border-bottom: none;
 }
+
+/* COMPLETED */
+.todo .text.completed {
+    text-decoration: line-through;
+}
+
+.todo .text.completed::after {
+    content: 'DONE!';
+    margin-left: 20px;
+    background: lightgreen;
+}
+
+.todo .text {
+    position: relative;
+    padding: 0 30px;
+}
+
+.todo .text::before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 0;
+    width: 15px;
+    height: 15px;
+    border: 1px solid #000;
+    border-radius: 50%;
+    transition: background .3s;
+}
+
+.todo .text.completed::before {
+    background: #00e165;
+}

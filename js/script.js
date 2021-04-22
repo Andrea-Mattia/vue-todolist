@@ -52,5 +52,13 @@
         removeTodo(index) {
             this.todos.splice(index, 1);
         },
+
+        /**
+         * Update todo completed status
+         * @param {number} index array position of the todo items
+         */
+         updateStatus(index) {
+            this.todos[index].completed = ! this.todos[index].completed;
+        },
     },
 });
