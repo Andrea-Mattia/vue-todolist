@@ -44,6 +44,10 @@
                     </span>
 
                     <div>
+                        <i class="fas fa-pen"
+                            @click="showEdit(index)"
+                        ></i>
+
                         <i class="fas fa-times"
                             @click="removeTodo(index)"
                         ></i>
@@ -52,6 +56,18 @@
             </ul>
             <h3 v-else>Non ci sono voci nella lista! Rick disapprova :(</h3>
         </section>
+
+        <section v-show="editTodo.visibility" class="edit-modal">
+            <div class="content">
+                <h3>Update todo text</h3>
+                <input type="text" v-model="editTodo.text">
+                <div>
+                    <button @click="updateTodo">Update</button>
+                    <button @click="closeEdit">Close</button>
+                </div>
+            </div>
+        </section>
+
     </div>
 
     <!-- JS -->

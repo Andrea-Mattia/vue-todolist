@@ -67,13 +67,14 @@ body {
     background: #00e165;
     cursor: pointer;
     border-radius: 30px;
-    transition: background .3s;
+    transition: background .2s, transform .2s, color .2s;
 }
 
 .new-todo button:hover,
 .new-todo button:focus {
     color: #fff;
     background: #005e2a;
+    transform: scale(1.15);
 }
 
 /* TODO LIST */
@@ -133,4 +134,81 @@ body {
 
 .todo .text.completed::before {
     background: #00e165;
+}
+
+.todo div i {
+    color: rgba(0,0,0, .4);
+    transition: color .2s, transform .2s;
+    cursor: pointer;
+}
+
+.todo div i:hover {
+    color: #000;
+    transform: scale(1.18);
+}
+
+/* EDIT MODAL */
+.edit-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0,0,0, .8);
+}
+
+.edit-modal .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 400px;
+    height: 200px;
+    padding: 40px;
+    background: #fff;
+    border-radius: 10px;
+}
+
+.edit-modal .content input {
+    border: 0;
+    border-bottom: 1px solid #ccc;
+    outline: none;
+    transition: border-color .3s;
+}
+
+.edit-modal .content input:hover {
+    border-color: #000;
+}
+
+.edit-modal .content div button {
+    padding: 5px 25px;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 20px;
+    border: none;
+    transition: background .3s, transform .3s;
+}
+
+.edit-modal .content div button:hover {
+    transform: scale(1.10);
+}
+
+.edit-modal .content div button:first-child {
+    background: rgba(30, 144, 255, .5);
+}
+
+.edit-modal .content div button:last-child {
+    background: rgba(240, 128, 128, .5);
+}
+
+.edit-modal .content div button:first-child:hover {
+    background: rgb(30, 144, 255);
+}
+
+.edit-modal .content div button:last-child:hover {
+    background: rgb(240, 128, 128);
 }

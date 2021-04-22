@@ -27,6 +27,11 @@
             },
         ],
         newTodo: '',
+        editTodo: {
+            visibility: false,
+            text: '',
+            index: null,
+        },
     },
     methods: {
         /**
@@ -59,6 +64,27 @@
          */
          updateStatus(index) {
             this.todos[index].completed = ! this.todos[index].completed;
+        },
+
+        /**
+         * Update text
+         */
+         showEdit(index) {
+            this.editTodo.text = this.todos[index].text;
+            this.editTodo.index = index;
+            this.editTodo.visibility = true;
+        },
+
+        updateTodo() {
+            this.todos[this.editTodo.index].text = this.editTodo.text;
+
+            this.closeEdit();
+        },
+
+        closeEdit() {
+            this.editTodo.visibility = false;
+            this.editTodo.text = '';
+            this.editTodo.index = null;
         },
     },
 });
