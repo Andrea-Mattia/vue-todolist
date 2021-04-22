@@ -9,6 +9,16 @@
 body {
     background-image: url('https://image.freepik.com/free-vector/retro-futuristic-landscape-background-with-sun_52683-18176.jpg');
     background-size: cover;
+    cursor: url('https://cdn.custom-cursor.com/db/4313/32/arrow2492.png'), auto;
+}
+
+audio {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 20px;
+    outline: none;
 }
 
 /* LAYOUT */
