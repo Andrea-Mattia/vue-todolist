@@ -9,5 +9,48 @@
  * lista
  */
 
-console.log('JS Works!');
-console.log('Vue', Vue);
+ const app = new Vue({
+    el: '#app',
+    data: {
+        todos: [
+            {
+                text: 'Never gonna give you up',
+                completed: false,
+            },
+            {
+                text: 'Never gonna let you down',
+                completed: false,
+            },
+            {
+                text: 'Never gonna run around',
+                completed: false,
+            },
+        ],
+        newTodo: '',
+    },
+    methods: {
+        /**
+         * Insert a new todo in the list
+         */
+        addTodo() {
+
+            if (this.newTodo !== '') {
+
+                this.todos.push({
+                    text: this.newTodo,
+                    completed: false,
+                });
+
+                this.newTodo = '';
+                this.$refs.todoInput.focus();
+            }
+        },
+        /**
+         * Remove the todo from the list by index
+         * @param {number} index array position of the todo items
+         */
+        removeTodo(index) {
+            this.todos.splice(index, 1);
+        },
+    },
+});

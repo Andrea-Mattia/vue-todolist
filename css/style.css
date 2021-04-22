@@ -4,5 +4,101 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
+}
+
+body {
+    background-image: url('https://image.freepik.com/free-vector/retro-futuristic-landscape-background-with-sun_52683-18176.jpg');
+    background-size: cover;
+}
+
+/* LAYOUT */
+.container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 1.5rem;
+    position: relative;
+    z-index: 1;
+    background: rgba(255,255,255, .8);
+    border-radius: 10px;
+}
+
+
+.app-header {
+    margin: 0px 0px 30px;
+    text-align: center;
+}
+
+.app-header h1 {
+    margin-bottom: 1rem;
+}
+
+.app-header img {
+    max-width: 300px;
+}
+
+/* NEW TODO */
+.new-todo {
+    display: flex;
+}
+
+.new-todo button,
+.new-todo input {
+    height: 35px;
+    border: 0;
+    outline: none;
+}
+
+.new-todo input {
+    flex-grow: 1;
+    margin-right: 20px;
+    border-bottom: 1px solid #ccc;
+    transition: border .3s;
+    background-color: inherit;
+}
+
+.new-todo input:hover,
+.new-todo input:focus {
+    border-color: #000;
+}
+
+.new-todo button {
+    padding: 0 30px;
+    text-transform: uppercase;
+    background: #00e165;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: background .3s;
+}
+
+.new-todo button:hover,
+.new-todo button:focus {
+    color: #fff;
+    background: #005e2a;
+}
+
+/* TODO LIST */
+.todos-container {
+    max-height: 200px;
+    margin: 40px 0 0;
+    padding: 15px 30px;
+    background: #f2f2f2;
+    border-radius: 10px;
+    box-shadow: 0 15px 10px -10px rgba(0,0,0, .2);
+    overflow-y: scroll;
+}
+
+.todos-container h3 {
+    text-align: center;
+}
+
+.todo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.todo:last-child {
+    border-bottom: none;
 }
